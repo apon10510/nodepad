@@ -1,51 +1,3 @@
-// import 'package:flutter/material.dart';
-// import 'package:flutter_quill/flutter_quill.dart';
-
-// class HomePage extends StatefulWidget {
-//   const HomePage({super.key});
-
-//   @override
-//   State<HomePage> createState() => _HomePageState();
-// }
-
-// class _HomePageState extends State<HomePage> {
-//   QuillController controller = QuillController.basic();
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       body: Column(
-//         children: [
-//           QuillToolbar.simple(
-//             configurations: QuillSimpleToolbarConfigurations(
-//               controller: controller,
-//               sharedConfigurations: const QuillSharedConfigurations(
-//                 locale: Locale('de'),
-//               ),
-//             ),
-//           ),
-//           Expanded(
-//             child: Padding(
-//               padding: const EdgeInsets.all(8.0),
-//               child: Card(
-//                 color: Colors.white,
-//                 child: QuillEditor.basic(
-//                   configurations: QuillEditorConfigurations(
-//                     controller: controller,
-//                     // readOnly: false,
-//                     sharedConfigurations: const QuillSharedConfigurations(
-//                       locale: Locale('de'),
-//                     ),
-//                   ),
-//                 ),
-//               ),
-//             ),
-//           ),
-//         ],
-//       ),
-//     );
-//   }
-// }
-
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_quill/flutter_quill.dart';
@@ -99,10 +51,6 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    if (controller == null) {
-      return const CircularProgressIndicator(); // Show a loading indicator while initializing
-    }
-
     return Scaffold(
       body: Column(
         children: [
@@ -118,6 +66,7 @@ class _HomePageState extends State<HomePage> {
             child: Padding(
               padding: const EdgeInsets.all(8),
               child: Card(
+                color: Colors.white,
                 child: QuillEditor.basic(
                   configurations: QuillEditorConfigurations(
                     padding: const EdgeInsets.all(8),
